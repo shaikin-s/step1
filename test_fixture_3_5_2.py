@@ -13,15 +13,15 @@ def browser():
     print("\nquit browser..")
     browser.quit()
 
-    class TestMainPage1():
 
-        @pytest.mark.smoke
-        @pytest.skip
-        def test_guest_should_see_login_link(self, browser):
-            browser.get(link)
-            browser.find_element(By.CSS_SELECTOR, "#login_link")
+class TestMainPage1():
 
-        @pytest.mark.regression
-        def test_guest_should_see_basket_on_the_main_page(self, browser):
-            browser.get(link)
-            browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
+    @pytest.mark.smoke
+    def test_guest_should_see_login_link(self, browser):
+        browser.get(link)
+        browser.find_element(By.CSS_SELECTOR, "#login_link")
+
+    @pytest.mark.regression
+    def test_guest_should_see_basket_on_the_main_page(self, browser):
+        browser.get(link)
+        browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
